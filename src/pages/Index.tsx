@@ -20,6 +20,24 @@ const services = [
   },
 ];
 
+const problems = [
+  {
+    problem: "Inefficient Workflows",
+    description: "Manual tasks slow down productivity and increase operational costs.",
+    solution: "Our AI Automation streamlines repetitive tasks, reduces errors, and boosts efficiency by up to 80%.",
+  },
+  {
+    problem: "Missed Customer Interactions",
+    description: "Businesses lose customers due to missed calls or slow response times.",
+    solution: "Our Voice Assistant AI ensures 24/7 availability, handling customer inquiries instantly.",
+  },
+  {
+    problem: "Lack of Scalable Support",
+    description: "Handling growing customer inquiries becomes overwhelming and inconsistent.",
+    solution: "Our Custom Chatbots provide scalable, automated customer interactions across all platforms.",
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -58,6 +76,66 @@ const Index = () => {
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problems & Solutions Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-12">
+            Problems We Solve
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {problems.map((item, index) => (
+              <div 
+                key={index}
+                className="p-8 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-200/20 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(155,135,245,0.4)] dark:hover:shadow-[0_0_50px_rgba(155,135,245,0.2)] hover:scale-105"
+              >
+                <h3 className="text-xl font-montserrat font-semibold mb-4 text-primary">
+                  {item.problem}
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  {item.description}
+                </p>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent my-4"></div>
+                <p className="text-foreground">
+                  <span className="font-semibold text-primary">Solution: </span>
+                  {item.solution}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
+            About <span className="text-primary">Orchida</span>
+          </h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg mb-6 leading-relaxed text-muted-foreground">
+              At Orchida, we're passionate about transforming businesses through the power of artificial intelligence. Our mission is to make advanced AI technology accessible, ethical, and practical for businesses of all sizes.
+            </p>
+            <p className="text-lg mb-8 leading-relaxed text-muted-foreground">
+              Founded by a team of AI experts and industry veterans, we combine cutting-edge technology with deep business understanding to deliver solutions that drive real results. Our approach focuses on creating seamless, efficient, and scalable AI implementations that grow with your business.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <h4 className="font-montserrat font-semibold text-xl mb-2">Our Mission</h4>
+                <p className="text-muted-foreground">To democratize AI technology and make it accessible to businesses worldwide</p>
+              </div>
+              <div className="text-center">
+                <h4 className="font-montserrat font-semibold text-xl mb-2">Our Vision</h4>
+                <p className="text-muted-foreground">To lead the AI revolution while maintaining ethical practices and transparency</p>
+              </div>
+              <div className="text-center">
+                <h4 className="font-montserrat font-semibold text-xl mb-2">Our Values</h4>
+                <p className="text-muted-foreground">Innovation, Integrity, and Customer Success drive everything we do</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
