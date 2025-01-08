@@ -84,13 +84,13 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-12">
-            Problems We Solve
+            Are you tired of
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {problems.map((item, index) => (
               <div 
                 key={index}
-                className="p-8 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-200/20 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(155,135,245,0.4)] dark:hover:shadow-[0_0_50px_rgba(155,135,245,0.2)] hover:scale-105"
+                className="p-8 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-200/20 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(126,105,171,0.4)] dark:hover:shadow-[0_0_50px_rgba(126,105,171,0.2)] hover:scale-105"
               >
                 <h3 className="text-xl font-montserrat font-semibold mb-4 text-primary">
                   {item.problem}
@@ -113,7 +113,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
-            About <span className="text-primary">Orchida</span>
+            About <span className="text-primary">Us</span>
           </h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg mb-6 leading-relaxed text-muted-foreground">

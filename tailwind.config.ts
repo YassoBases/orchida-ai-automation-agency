@@ -20,9 +20,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5",
-          dark: "#7E69AB",
-          darker: "#6E59A5",
+          DEFAULT: "#7E69AB",
+          dark: "#6E59A5",
+          darker: "#5E499F",
         },
         orchid: {
           50: "#faf5ff",
