@@ -49,7 +49,10 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div key={service.title} className="p-6 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-200/20 hover:border-primary/50 transition-all">
+              <div 
+                key={service.title} 
+                className="p-6 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-200/20 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(155,135,245,0.3)] dark:hover:shadow-[0_0_30px_rgba(155,135,245,0.15)]"
+              >
                 <service.icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-montserrat font-semibold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
