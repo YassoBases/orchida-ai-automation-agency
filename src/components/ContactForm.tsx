@@ -25,15 +25,15 @@ import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
-  fullName: z.string().min(2, "Name must be at least 2 characters"),
+  full_name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
-  companyName: z.string().optional(),
-  inquiryType: z.enum(["AI_AUTOMATION", "VOICE_ASSISTANT", "CHATBOT", "GENERAL"]),
+  company_name: z.string().optional(),
+  inquiry_type: z.enum(["AI_AUTOMATION", "VOICE_ASSISTANT", "CHATBOT", "GENERAL"]),
   message: z.string().min(10, "Message must be at least 10 characters"),
-  preferredContact: z.enum(["EMAIL", "PHONE", "NO_PREFERENCE"]),
-  referralSource: z.enum(["GOOGLE_SEARCH", "SOCIAL_MEDIA", "REFERRAL", "ADVERTISEMENT", "OTHER"]).optional(),
-  consentGiven: z.boolean().refine((val) => val === true, "You must agree to the terms"),
+  preferred_contact: z.enum(["EMAIL", "PHONE", "NO_PREFERENCE"]),
+  referral_source: z.enum(["GOOGLE_SEARCH", "SOCIAL_MEDIA", "REFERRAL", "ADVERTISEMENT", "OTHER"]).optional(),
+  consent_given: z.boolean().refine((val) => val === true, "You must agree to the terms"),
 });
 
 export function ContactForm() {
@@ -41,8 +41,8 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      preferredContact: "NO_PREFERENCE",
-      consentGiven: false,
+      preferred_contact: "NO_PREFERENCE",
+      consent_given: false,
     },
   });
 
@@ -59,7 +59,7 @@ export function ContactForm() {
       const { error: emailError } = await supabase.functions.invoke("send-contact-email", {
         body: { 
           to: values.email,
-          name: values.fullName,
+          name: values.full_name,
         },
       });
 
@@ -86,7 +86,7 @@ export function ContactForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
-          name="fullName"
+          name="full_name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Full Name</FormLabel>
@@ -128,7 +128,7 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="companyName"
+          name="company_name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Company Name (Optional)</FormLabel>
@@ -142,7 +142,7 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="inquiryType"
+          name="inquiry_type"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Inquiry Type</FormLabel>
@@ -185,7 +185,7 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="preferredContact"
+          name="preferred_contact"
           render={({ field }) => (
             <FormItem className="space-y-3">
               <FormLabel>Preferred Contact Method</FormLabel>
@@ -228,7 +228,7 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="referralSource"
+          name="referral_source"
           render={({ field }) => (
             <FormItem>
               <FormLabel>How Did You Hear About Us?</FormLabel>
@@ -253,7 +253,7 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="consentGiven"
+          name="consent_given"
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0">
               <FormControl>
