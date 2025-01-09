@@ -31,7 +31,17 @@ export function ContactForm() {
       // Store submission in Supabase
       const { error: submissionError } = await supabase
         .from('contact_submissions')
-        .insert(values);
+        .insert({
+          full_name: values.full_name,
+          email: values.email,
+          phone: values.phone,
+          company_name: values.company_name,
+          inquiry_type: values.inquiry_type,
+          message: values.message,
+          preferred_contact: values.preferred_contact,
+          referral_source: values.referral_source,
+          consent_given: values.consent_given,
+        });
 
       if (submissionError) throw submissionError;
 
