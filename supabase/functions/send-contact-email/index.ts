@@ -22,6 +22,7 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { to, name }: EmailRequest = await req.json();
 
+    // For testing purposes, we'll use Resend's test email
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -29,7 +30,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Orchida AI Agency <orchida.agency@gmail.com>",
+        from: "onboarding@resend.dev", // Using Resend's test email address
         to: [to],
         subject: "We've Received Your Inquiry - Orchida AI Agency",
         html: `
@@ -42,6 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     if (res.ok) {
       const data = await res.json();
+      console.log("Email sent successfully:", data);
       return new Response(JSON.stringify(data), {
         status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
