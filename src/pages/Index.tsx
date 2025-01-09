@@ -1,6 +1,9 @@
 import { Bot, Headphones, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { ContactForm } from "@/components/ContactForm";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useEffect, useRef } from "react";
 
 const services = [
   {
@@ -39,6 +42,12 @@ const problems = [
 ];
 
 const Index = () => {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -53,7 +62,11 @@ const Index = () => {
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
             From AI Automation to Voice Assistant Solutions, Orchida Streamlines Your Workflow
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary-dark">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-[0_0_15px_rgba(126,105,171,0.5)]"
+            onClick={scrollToContact}
+          >
             Get Started Today
           </Button>
         </div>
@@ -74,6 +87,18 @@ const Index = () => {
                 <service.icon className="w-12 h-12 text-primary mb-4 transition-transform duration-500 group-hover:scale-110" />
                 <h3 className="text-xl font-montserrat font-semibold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      className="mt-4 w-full bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-[0_0_15px_rgba(126,105,171,0.5)]"
+                    >
+                      Discover Our Solutions
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[600px]">
+                    <ContactForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             ))}
           </div>
@@ -103,6 +128,18 @@ const Index = () => {
                   <span className="font-semibold text-primary">Solution: </span>
                   {item.solution}
                 </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      className="mt-4 w-full bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-[0_0_15px_rgba(126,105,171,0.5)]"
+                    >
+                      Talk to Our Experts Today!
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[600px]">
+                    <ContactForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             ))}
           </div>
@@ -140,18 +177,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-montserrat font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-lg mb-8 text-muted-foreground">
-            Let AI handle the heavy lifting – Contact us now!
-          </p>
-          <Button size="lg" className="bg-primary hover:bg-primary-dark">
+      {/* Contact Section */}
+      <section ref={contactRef} className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
             Contact Us
-          </Button>
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <ContactForm />
+          </div>
         </div>
       </section>
 
