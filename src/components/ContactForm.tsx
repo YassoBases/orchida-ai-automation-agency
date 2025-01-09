@@ -14,7 +14,14 @@ export function ContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
+      full_name: "",
+      email: "",
+      phone: "",
+      company_name: "",
+      inquiry_type: "GENERAL",
+      message: "",
       preferred_contact: "NO_PREFERENCE",
+      referral_source: undefined,
       consent_given: false,
     },
   });

@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Orchida AI Agency <onboarding@resend.dev>",
+        from: "Orchida AI Agency <orchida.agency@gmail.com>",
         to: [to],
         subject: "We've Received Your Inquiry - Orchida AI Agency",
         html: `
@@ -48,12 +48,13 @@ const handler = async (req: Request): Promise<Response> => {
       });
     } else {
       const error = await res.text();
+      console.error("Error response from Resend:", error);
       return new Response(JSON.stringify({ error }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
