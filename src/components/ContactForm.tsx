@@ -50,8 +50,8 @@ export function ContactForm() {
     try {
       // Store submission in Supabase
       const { error: submissionError } = await supabase
-        .from("contact_submissions")
-        .insert([values]);
+        .from('contact_submissions')
+        .insert(values); // Changed from [values] to values to submit a single object
 
       if (submissionError) throw submissionError;
 
