@@ -9,7 +9,52 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          company_name: string | null
+          consent_given: boolean
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          inquiry_type: Database["public"]["Enums"]["inquiry_type"]
+          message: string
+          phone: string | null
+          preferred_contact: Database["public"]["Enums"]["preferred_contact"]
+          referral_source: Database["public"]["Enums"]["referral_source"] | null
+        }
+        Insert: {
+          company_name?: string | null
+          consent_given: boolean
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          inquiry_type: Database["public"]["Enums"]["inquiry_type"]
+          message: string
+          phone?: string | null
+          preferred_contact: Database["public"]["Enums"]["preferred_contact"]
+          referral_source?:
+            | Database["public"]["Enums"]["referral_source"]
+            | null
+        }
+        Update: {
+          company_name?: string | null
+          consent_given?: boolean
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          inquiry_type?: Database["public"]["Enums"]["inquiry_type"]
+          message?: string
+          phone?: string | null
+          preferred_contact?: Database["public"]["Enums"]["preferred_contact"]
+          referral_source?:
+            | Database["public"]["Enums"]["referral_source"]
+            | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -18,7 +63,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      inquiry_type: "AI_AUTOMATION" | "VOICE_ASSISTANT" | "CHATBOT" | "GENERAL"
+      preferred_contact: "EMAIL" | "PHONE" | "NO_PREFERENCE"
+      referral_source:
+        | "GOOGLE_SEARCH"
+        | "SOCIAL_MEDIA"
+        | "REFERRAL"
+        | "ADVERTISEMENT"
+        | "OTHER"
     }
     CompositeTypes: {
       [_ in never]: never
