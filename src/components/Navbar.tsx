@@ -33,25 +33,25 @@ export const Navbar = () => {
           <div className="flex-1 flex items-center justify-center space-x-8">
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+              className="text-orchid-100 hover:text-orchid-400 transition-colors bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+              className="text-orchid-100 hover:text-orchid-400 transition-colors bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+              className="text-orchid-100 hover:text-orchid-400 transition-colors bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+              className="text-orchid-100 hover:text-orchid-400 transition-colors bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent"
             >
               Contact
             </button>

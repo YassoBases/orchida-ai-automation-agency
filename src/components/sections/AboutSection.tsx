@@ -2,8 +2,8 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
-          About <span className="text-primary">Us</span>
+        <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8 bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
+          About Us
         </h2>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-lg mb-6 leading-relaxed text-muted-foreground">
@@ -21,7 +21,7 @@ export const AboutSection = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <h4 className="font-montserrat font-semibold text-xl mb-2">
+              <h4 className="font-montserrat font-semibold text-xl mb-2 bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
                 Our Mission
               </h4>
               <p className="text-muted-foreground">
@@ -30,7 +30,7 @@ export const AboutSection = () => {
               </p>
             </div>
             <div className="text-center">
-              <h4 className="font-montserrat font-semibold text-xl mb-2">
+              <h4 className="font-montserrat font-semibold text-xl mb-2 bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
                 Our Vision
               </h4>
               <p className="text-muted-foreground">
@@ -39,7 +39,7 @@ export const AboutSection = () => {
               </p>
             </div>
             <div className="text-center">
-              <h4 className="font-montserrat font-semibold text-xl mb-2">
+              <h4 className="font-montserrat font-semibold text-xl mb-2 bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
                 Our Values
               </h4>
               <p className="text-muted-foreground">

@@ -9,10 +9,8 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
     <section id="hero" className="pt-32 pb-20 px-4">
       <div className="container mx-auto text-center">
         <h1 className="font-montserrat font-bold text-4xl md:text-6xl mb-6 animate-fade-in">
-          Empowering Businesses with
           <span className="bg-gradient-to-r from-primary via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
-            {" "}
-            Next-Generation AI
+            Empowering Businesses with Next-Generation AI
           </span>
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
