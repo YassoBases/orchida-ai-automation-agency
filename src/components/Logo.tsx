@@ -20,37 +20,29 @@ export const Logo = () => {
   return (
     <svg
       ref={svgRef}
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="transition-all duration-300 hover:scale-110"
     >
       <path
-        d="M24 4C14.0589 4 6 12.0589 6 22C6 31.9411 14.0589 40 24 40C33.9411 40 42 31.9411 42 22C42 12.0589 33.9411 4 24 4Z"
-        fill="url(#gradient-1)"
+        d="M20 5C12.8203 5 7 10.8203 7 18C7 25.1797 12.8203 31 20 31C27.1797 31 33 25.1797 33 18C33 10.8203 27.1797 5 20 5ZM20 8C25.5228 8 30 12.4772 30 18C30 23.5228 25.5228 28 20 28C14.4772 28 10 23.5228 10 18C10 12.4772 14.4772 8 20 8Z"
+        fill="url(#gradient)"
       />
       <path
-        d="M24 8C16.268 8 10 14.268 10 22C10 29.732 16.268 36 24 36C31.732 36 38 29.732 38 22C38 14.268 31.732 8 24 8Z"
-        fill="url(#gradient-2)"
-      />
-      <path
-        d="M24 12C18.4772 12 14 16.4772 14 22C14 27.5228 18.4772 32 24 32C29.5228 32 34 27.5228 34 22C34 16.4772 29.5228 12 24 12Z"
-        fill="url(#gradient-3)"
+        d="M20 11C16.134 11 13 14.134 13 18C13 21.866 16.134 25 20 25C23.866 25 27 21.866 27 18C27 14.134 23.866 11 20 11ZM20 14C22.2091 14 24 15.7909 24 18C24 20.2091 22.2091 22 20 22C17.7909 22 16 20.2091 16 18C16 15.7909 17.7909 14 20 14Z"
+        fill="url(#gradient2)"
       />
       <defs>
-        <linearGradient id="gradient-1" x1="6" y1="4" x2="42" y2="40" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#7E69AB" />
-          <stop offset="1" stopColor="#a855f7" />
+        <linearGradient id="gradient" x1="7" y1="5" x2="33" y2="31" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#9b87f5" />
+          <stop offset="1" stopColor="#D946EF" />
         </linearGradient>
-        <linearGradient id="gradient-2" x1="10" y1="8" x2="38" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#9333ea" />
-          <stop offset="1" stopColor="#7E69AB" />
-        </linearGradient>
-        <linearGradient id="gradient-3" x1="14" y1="12" x2="34" y2="32" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#a855f7" />
-          <stop offset="1" stopColor="#9333ea" />
+        <linearGradient id="gradient2" x1="13" y1="11" x2="27" y2="25" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#D946EF" />
+          <stop offset="1" stopColor="#9b87f5" />
         </linearGradient>
       </defs>
     </svg>

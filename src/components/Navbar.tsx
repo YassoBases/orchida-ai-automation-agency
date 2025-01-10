@@ -7,20 +7,26 @@ export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-orchid-700/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <Logo />
             <span className="font-montserrat font-bold text-xl bg-gradient-to-r from-primary to-orchid-500 bg-clip-text text-transparent">
               Orchida
             </span>
           </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-orchid-100 hover:text-orchid-400 transition-colors">Home</a>
+            <a href="#about" className="text-orchid-100 hover:text-orchid-400 transition-colors">About</a>
+            <a href="#services" className="text-orchid-100 hover:text-orchid-400 transition-colors">Services</a>
+            <a href="#contact" className="text-orchid-100 hover:text-orchid-400 transition-colors">Contact</a>
+          </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className="ml-auto"
+            className="ml-auto md:ml-0 text-orchid-100 hover:text-orchid-400"
           >
             {theme === "dark" ? (
               <Sun className="h-5 w-5" />
