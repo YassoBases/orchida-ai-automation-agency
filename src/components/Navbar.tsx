@@ -6,8 +6,22 @@ import { Moon, Sun } from "lucide-react";
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 64; // 4rem or 64px
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-orchid-700/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-orchid-700/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
@@ -16,17 +30,37 @@ export const Navbar = () => {
               Orchida
             </span>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-orchid-100 hover:text-orchid-400 transition-colors">Home</a>
-            <a href="#about" className="text-orchid-100 hover:text-orchid-400 transition-colors">About</a>
-            <a href="#services" className="text-orchid-100 hover:text-orchid-400 transition-colors">Services</a>
-            <a href="#contact" className="text-orchid-100 hover:text-orchid-400 transition-colors">Contact</a>
+          <div className="flex-1 flex items-center justify-center space-x-8">
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-orchid-100 hover:text-orchid-400 transition-colors"
+            >
+              Contact
+            </button>
           </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className="ml-auto md:ml-0 text-orchid-100 hover:text-orchid-400"
+            className="text-orchid-100 hover:text-orchid-400"
           >
             {theme === "dark" ? (
               <Sun className="h-5 w-5" />

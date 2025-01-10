@@ -50,6 +50,13 @@ export default {
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",
       },
+      // Add dropdown menu background colors
+      backgroundColor: {
+        'dropdown': {
+          light: '#ffffff',
+          dark: '#1A1F2C',
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

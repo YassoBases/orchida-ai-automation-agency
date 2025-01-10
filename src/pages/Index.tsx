@@ -53,7 +53,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section id="hero" className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-montserrat font-bold text-4xl md:text-6xl mb-6 animate-fade-in">
             Empowering Businesses with
@@ -73,7 +73,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
+      <section id="services" className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-12">
             Our Key Services
@@ -147,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
+      <section id="about" className="py-20 px-4 bg-orchid-50 dark:bg-orchid-900/10">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
             About <span className="text-primary">Us</span>
@@ -178,7 +178,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section ref={contactRef} className="py-20 px-4">
+      <section id="contact" ref={contactRef} className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-center mb-8">
             Contact Us
