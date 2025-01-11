@@ -2,6 +2,7 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/comp
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Link } from "react-router-dom";
 import { UseFormReturn } from "react-hook-form";
 import { ContactFormValues } from "./types";
 
@@ -87,7 +88,14 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
             </FormControl>
             <div className="space-y-1 leading-none">
               <FormLabel>
-                I agree to the Privacy Policy and Terms of Service
+                I agree to the{" "}
+                <Link to="/privacy-policy" className="text-primary hover:underline" target="_blank">
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link to="/terms-of-service" className="text-primary hover:underline" target="_blank">
+                  Terms of Service
+                </Link>
               </FormLabel>
             </div>
           </FormItem>
