@@ -50,7 +50,6 @@ export default {
       animation: {
         "fade-in": "fade-in 0.5s ease-out forwards",
       },
-      // Add dropdown menu background colors
       backgroundColor: {
         'dropdown': {
           light: '#ffffff',
