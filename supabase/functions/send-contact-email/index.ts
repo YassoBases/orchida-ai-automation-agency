@@ -23,6 +23,12 @@ const handler = async (req: Request): Promise<Response> => {
     const { to, name }: EmailRequest = await req.json();
     console.log("Attempting to send email to:", to);
 
+    // Check if we're in development/testing mode
+    const isDevelopment = !Deno.env.get("RESEND_VERIFIED_DOMAIN");
+    const fromEmail = isDevelopment 
+      ? "onboarding@resend.dev"  // Default testing email
+      : `noreply@${Deno.env.get("RESEND_VERIFIED_DOMAIN")}`; // Production email
+
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -30,7 +36,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Orchida AI <onboarding@resend.dev>",
+        from: `Orchida AI <${fromEmail}>`,
         to: [to],
         subject: "Thank You for Contacting Orchida AI",
         html: `
