@@ -8,7 +8,7 @@ export const Logo = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="transition-all duration-300 hover:scale-110"
     >
-      {/* Orchid Flower Design */}
+      {/* 4-Petal Orchid Flower Design */}
       <path
         d="M20 5C16 5 13 8 13 12C13 15 15 17 17 18C15 19 13 21 13 24C13 28 16 31 20 31C24 31 27 28 27 24C27 21 25 19 23 18C25 17 27 15 27 12C27 8 24 5 20 5Z"
         fill="url(#gradient)"

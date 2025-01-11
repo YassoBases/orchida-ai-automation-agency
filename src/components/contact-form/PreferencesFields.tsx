@@ -61,7 +61,7 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
                   <SelectValue placeholder="Select source" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent>
+              <SelectContent className="bg-background border border-primary/20">
                 <SelectItem value="GOOGLE_SEARCH">Google Search</SelectItem>
                 <SelectItem value="SOCIAL_MEDIA">Social Media</SelectItem>
                 <SelectItem value="REFERRAL">Referral</SelectItem>

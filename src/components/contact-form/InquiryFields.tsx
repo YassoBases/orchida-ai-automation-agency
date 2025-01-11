@@ -23,7 +23,7 @@ export function InquiryFields({ form }: InquiryFieldsProps) {
                   <SelectValue placeholder="Select inquiry type" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent>
+              <SelectContent className="bg-background border border-primary/20">
                 <SelectItem value="AI_AUTOMATION">AI Automation</SelectItem>
                 <SelectItem value="VOICE_ASSISTANT">Voice Assistant AI</SelectItem>
                 <SelectItem value="CHATBOT">Chatbot Implementation</SelectItem>

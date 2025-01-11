@@ -1,11 +1,6 @@
-import { useTheme } from "@/hooks/use-theme";
-import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { Moon, Sun } from "lucide-react";
 
 export const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -56,18 +51,6 @@ export const Navbar = () => {
               Contact
             </button>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="text-orchid-100 hover:text-orchid-400"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
         </div>
       </div>
     </nav>
