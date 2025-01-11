@@ -73,7 +73,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full max-w-md mx-auto px-4 md:px-0">
         <PersonalInfoFields form={form} />
         <InquiryFields form={form} />
         <PreferencesFields form={form} />

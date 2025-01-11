@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const TESTING_EMAIL = "orchida.agency@gmail.com"; // The email associated with your Resend account
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -24,9 +23,6 @@ const handler = async (req: Request): Promise<Response> => {
     const { to, name }: EmailRequest = await req.json();
     console.log("Attempting to send email to:", to);
 
-    // During development/testing, always send to the testing email
-    const recipientEmail = TESTING_EMAIL;
-
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -34,14 +30,17 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "onboarding@resend.dev",
-        to: [recipientEmail],
-        subject: "We've Received Your Inquiry - Orchida AI Agency",
+        from: "Orchida AI <onboarding@resend.dev>",
+        to: [to],
+        subject: "Thank You for Contacting Orchida AI",
         html: `
-          <p>Dear ${name},</p>
-          <p>Thank you for reaching out to Orchida AI Agency. Your inquiry has been received, and our team will respond within 24 hours.</p>
-          <p>Best regards,<br>Orchida AI Team</p>
-          <p><small>Note: This is a test email sent to ${recipientEmail}. In production, this would be sent to: ${to}</small></p>
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #9b87f5;">Thank You for Reaching Out!</h2>
+            <p>Dear ${name},</p>
+            <p>Thank you for contacting Orchida AI. We've received your inquiry and our team will review it promptly.</p>
+            <p>We typically respond within 24-48 hours during business days.</p>
+            <p>Best regards,<br>The Orchida AI Team</p>
+          </div>
         `,
       }),
     });
