@@ -35,7 +35,7 @@ export const ServicesSection = () => {
               className="p-6 rounded-xl bg-background/50 backdrop-blur-sm border border-orchid-400/20 hover:border-orchid-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(217,70,239,0.2)] hover:scale-105"
             >
               <service.icon className="w-12 h-12 text-orchid-400 mb-4" />
-              <h3 className="text-xl font-montserrat font-semibold mb-2 text-orchid-100">
+              <h3 className="text-xl font-montserrat font-semibold mb-2 bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
                 {service.title}
               </h3>
               <p className="text-orchid-100/80 mb-6">{service.description}</p>

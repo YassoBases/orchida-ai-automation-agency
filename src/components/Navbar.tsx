@@ -4,7 +4,7 @@ export const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 64; // 4rem or 64px
+      const navbarHeight = 64;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
@@ -21,32 +21,32 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
             <Logo />
-            <span className="font-montserrat font-bold text-xl text-orchid-400">
+            <span className="font-montserrat font-bold text-xl bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
               Orchida
             </span>
           </div>
           <div className="flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="text-orchid-400 hover:text-orchid-300 transition-colors"
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-orchid-400 hover:text-orchid-300 transition-colors"
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="text-orchid-400 hover:text-orchid-300 transition-colors"
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="text-orchid-400 hover:text-orchid-300 transition-colors"
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
             >
               Contact
             </button>

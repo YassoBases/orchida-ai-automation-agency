@@ -28,7 +28,6 @@ export function ContactForm() {
 
   async function onSubmit(values: ContactFormValues) {
     try {
-      // Store submission in Supabase
       const { error: submissionError } = await supabase
         .from('contact_submissions')
         .insert({
@@ -46,6 +45,8 @@ export function ContactForm() {
       if (submissionError) throw submissionError;
 
       toast({
+        variant: "default",
+        className: "bg-background border border-orchid-400/20",
         title: "Success!",
         description: "Thank you for contacting Orchida! We'll review your inquiry and get back to you shortly.",
       });
