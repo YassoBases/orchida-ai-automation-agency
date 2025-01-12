@@ -45,16 +45,6 @@ export function ContactForm() {
 
       if (submissionError) throw submissionError;
 
-      // Send confirmation email via edge function
-      const { error: emailError } = await supabase.functions.invoke("send-contact-email", {
-        body: { 
-          to: values.email,
-          name: values.full_name,
-        },
-      });
-
-      if (emailError) throw emailError;
-
       toast({
         title: "Success!",
         description: "Thank you for contacting Orchida! We'll review your inquiry and get back to you shortly.",

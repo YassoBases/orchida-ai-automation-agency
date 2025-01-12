@@ -16,18 +16,18 @@ export function InquiryFields({ form }: InquiryFieldsProps) {
         name="inquiry_type"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Inquiry Type</FormLabel>
+            <FormLabel className="text-white">Inquiry Type</FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-[#1E2330] text-white">
                   <SelectValue placeholder="Select inquiry type" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent className="bg-background border border-primary/20 backdrop-blur-lg">
-                <SelectItem value="AI_AUTOMATION" className="focus:bg-primary/20">AI Automation</SelectItem>
-                <SelectItem value="VOICE_ASSISTANT" className="focus:bg-primary/20">Voice Assistant AI</SelectItem>
-                <SelectItem value="CHATBOT" className="focus:bg-primary/20">Chatbot Implementation</SelectItem>
-                <SelectItem value="GENERAL" className="focus:bg-primary/20">General Inquiry</SelectItem>
+              <SelectContent className="bg-[#1E2330] border border-primary/20 backdrop-blur-lg">
+                <SelectItem value="AI_AUTOMATION" className="text-white focus:bg-primary/20">AI Automation</SelectItem>
+                <SelectItem value="VOICE_ASSISTANT" className="text-white focus:bg-primary/20">Voice Assistant AI</SelectItem>
+                <SelectItem value="CHATBOT" className="text-white focus:bg-primary/20">Chatbot Implementation</SelectItem>
+                <SelectItem value="GENERAL" className="text-white focus:bg-primary/20">General Inquiry</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
@@ -40,11 +40,11 @@ export function InquiryFields({ form }: InquiryFieldsProps) {
         name="message"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Message</FormLabel>
+            <FormLabel className="text-white">Message</FormLabel>
             <FormControl>
               <Textarea 
                 placeholder="Write your message here" 
-                className="min-h-[100px] resize-none"
+                className="min-h-[100px] resize-none bg-[#1E2330] text-white placeholder:text-gray-400"
                 maxLength={500}
                 {...field} 
               />

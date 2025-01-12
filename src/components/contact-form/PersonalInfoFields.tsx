@@ -15,9 +15,9 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
         name="full_name"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Full Name</FormLabel>
+            <FormLabel className="text-white">Full Name</FormLabel>
             <FormControl>
-              <Input placeholder="Enter your full name" {...field} />
+              <Input placeholder="Enter your full name" className="bg-[#1E2330] text-white placeholder:text-gray-400" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -29,9 +29,9 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
         name="email"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Email</FormLabel>
+            <FormLabel className="text-white">Email</FormLabel>
             <FormControl>
-              <Input placeholder="Enter your email address" {...field} />
+              <Input placeholder="Enter your email address" className="bg-[#1E2330] text-white placeholder:text-gray-400" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -43,9 +43,9 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
         name="phone"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Phone Number (Optional)</FormLabel>
+            <FormLabel className="text-white">Phone Number (Optional)</FormLabel>
             <FormControl>
-              <Input placeholder="Enter your phone number" {...field} />
+              <Input placeholder="Enter your phone number" className="bg-[#1E2330] text-white placeholder:text-gray-400" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -57,9 +57,9 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
         name="company_name"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Company Name (Optional)</FormLabel>
+            <FormLabel className="text-white">Company Name (Optional)</FormLabel>
             <FormControl>
-              <Input placeholder="Enter your company name" {...field} />
+              <Input placeholder="Enter your company name" className="bg-[#1E2330] text-white placeholder:text-gray-400" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>

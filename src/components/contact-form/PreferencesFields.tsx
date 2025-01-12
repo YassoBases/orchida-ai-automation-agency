@@ -18,7 +18,7 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
         name="preferred_contact"
         render={({ field }) => (
           <FormItem className="space-y-3">
-            <FormLabel>Preferred Contact Method</FormLabel>
+            <FormLabel className="text-white">Preferred Contact Method</FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
@@ -29,19 +29,19 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
                   <FormControl>
                     <RadioGroupItem value="EMAIL" />
                   </FormControl>
-                  <FormLabel className="font-normal">Email</FormLabel>
+                  <FormLabel className="font-normal text-white">Email</FormLabel>
                 </FormItem>
                 <FormItem className="flex items-center space-x-3 space-y-0">
                   <FormControl>
                     <RadioGroupItem value="PHONE" />
                   </FormControl>
-                  <FormLabel className="font-normal">Phone</FormLabel>
+                  <FormLabel className="font-normal text-white">Phone</FormLabel>
                 </FormItem>
                 <FormItem className="flex items-center space-x-3 space-y-0">
                   <FormControl>
                     <RadioGroupItem value="NO_PREFERENCE" />
                   </FormControl>
-                  <FormLabel className="font-normal">No Preference</FormLabel>
+                  <FormLabel className="font-normal text-white">No Preference</FormLabel>
                 </FormItem>
               </RadioGroup>
             </FormControl>
@@ -55,19 +55,19 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
         name="referral_source"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>How Did You Hear About Us?</FormLabel>
+            <FormLabel className="text-white">How Did You Hear About Us?</FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger>
+                <SelectTrigger className="bg-[#1E2330] text-white">
                   <SelectValue placeholder="Select source" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent className="bg-background border border-primary/20">
-                <SelectItem value="GOOGLE_SEARCH">Google Search</SelectItem>
-                <SelectItem value="SOCIAL_MEDIA">Social Media</SelectItem>
-                <SelectItem value="REFERRAL">Referral</SelectItem>
-                <SelectItem value="ADVERTISEMENT">Advertisement</SelectItem>
-                <SelectItem value="OTHER">Other</SelectItem>
+              <SelectContent className="bg-[#1E2330] border border-primary/20">
+                <SelectItem value="GOOGLE_SEARCH" className="text-white focus:bg-primary/20">Google Search</SelectItem>
+                <SelectItem value="SOCIAL_MEDIA" className="text-white focus:bg-primary/20">Social Media</SelectItem>
+                <SelectItem value="REFERRAL" className="text-white focus:bg-primary/20">Referral</SelectItem>
+                <SelectItem value="ADVERTISEMENT" className="text-white focus:bg-primary/20">Advertisement</SelectItem>
+                <SelectItem value="OTHER" className="text-white focus:bg-primary/20">Other</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />
@@ -87,7 +87,7 @@ export function PreferencesFields({ form }: PreferencesFieldsProps) {
               />
             </FormControl>
             <div className="space-y-1 leading-none">
-              <FormLabel>
+              <FormLabel className="text-white">
                 I agree to the{" "}
                 <Link to="/privacy-policy" className="text-primary hover:underline" target="_blank">
                   Privacy Policy
