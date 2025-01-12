@@ -42,9 +42,9 @@ export const ProblemsSection = () => {
               <h3 className="text-xl font-montserrat font-semibold mb-4 text-primary">
                 {item.problem}
               </h3>
-              <p className="text-muted-foreground mb-4">{item.description}</p>
+              <p className="text-white mb-4">{item.description}</p>
               <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent my-4"></div>
-              <p className="text-foreground">
+              <p className="text-white">
                 <span className="font-semibold text-primary">Solution: </span>
                 {item.solution}
               </p>
