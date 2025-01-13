@@ -99,3 +99,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.form-message {
+  @apply text-[#8B0000] text-sm mt-1;
+}

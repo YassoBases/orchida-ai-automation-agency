@@ -75,6 +75,12 @@ export function ContactForm() {
         >
           Send Inquiry
         </Button>
+
+        <style jsx global>{`
+          .form-message {
+            color: #8B0000 !important;
+          }
+        `}</style>
       </form>
     </Form>
   );
