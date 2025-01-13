@@ -17,6 +17,7 @@ export function ContactForm() {
       full_name: "",
       email: "",
       phone: "",
+      country_code: "+1",
       company_name: "",
       inquiry_type: "GENERAL",
       message: "",
@@ -33,7 +34,7 @@ export function ContactForm() {
         .insert({
           full_name: values.full_name,
           email: values.email,
-          phone: values.phone,
+          phone: values.phone ? `${values.country_code}${values.phone}` : null,
           company_name: values.company_name,
           inquiry_type: values.inquiry_type,
           message: values.message,
