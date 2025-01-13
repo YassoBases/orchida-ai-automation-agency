@@ -46,9 +46,9 @@ export function ContactForm() {
 
       toast({
         variant: "default",
-        className: "bg-background border border-orchid-400/20",
         title: "Success!",
         description: "Thank you for contacting Orchida! We'll review your inquiry and get back to you shortly.",
+        className: "bg-background border border-orchid-400/20 text-white",
       });
 
       form.reset();
