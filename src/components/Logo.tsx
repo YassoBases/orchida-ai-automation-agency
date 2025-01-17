@@ -8,10 +8,16 @@ export const Logo = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="transition-all duration-300 hover:scale-110"
     >
-      {/* Orchid Flower Design inspired by the image */}
+      {/* Main Petals */}
       <path
         d="M20 5C16 8 13 12 13 16C13 19 15 21 17 22C15 23 13 25 13 28C13 32 16 35 20 35C24 35 27 32 27 28C27 25 25 23 23 22C25 21 27 19 27 16C27 12 24 8 20 5Z"
         fill="url(#gradient)"
+      />
+      {/* Side Petals */}
+      <path
+        d="M8 18C6 22 7 26 10 28C12 29 14 29 16 28C14 30 13 33 15 36C18 40 23 40 26 37C28 35 29 32 28 30C30 31 33 30 35 27C38 23 36 18 32 16C29 15 26 15 24 17C25 15 25 12 23 9C20 5 15 5 12 8C10 10 9 13 10 15C8 14 7 15 8 18Z"
+        fill="url(#gradient)"
+        opacity="0.7"
       />
       {/* Center detail */}
       <path
@@ -20,7 +26,7 @@ export const Logo = () => {
       />
       {/* Petal veins */}
       <path
-        d="M20 8C18 10 17 12 17 14M20 32C22 30 23 28 23 26"
+        d="M20 8C18 10 17 12 17 14M20 32C22 30 23 28 23 26M12 12C14 14 15 17 15 19M28 12C26 14 25 17 25 19M15 31C17 29 18 26 18 24M25 31C23 29 22 26 22 24"
         stroke="url(#gradient3)"
         strokeWidth="0.5"
       />
