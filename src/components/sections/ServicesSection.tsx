@@ -16,8 +16,8 @@ const services = [
   },
   {
     icon: MessageSquare,
-    title: "Chatbot Implementation",
-    description: "Intelligent chatbots for enhanced customer support",
+    title: "AI Chatbot Implementation",
+    description: "Advanced AI chatbots for intelligent customer interactions",
   },
 ];
 
