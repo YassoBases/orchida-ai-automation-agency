@@ -1,6 +1,4 @@
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ContactForm } from "@/components/ContactForm";
 
 const problems = [
   {
@@ -27,6 +25,20 @@ const problems = [
 ];
 
 export const ProblemsSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const navbarHeight = 64;
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <section className="py-12 md:py-20 px-4">
       <div className="container mx-auto">
@@ -48,16 +60,12 @@ export const ProblemsSection = () => {
                 <span className="font-semibold text-primary">Solution: </span>
                 {item.solution}
               </p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="mt-4 w-full bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-[0_0_15px_rgba(126,105,171,0.5)] text-sm md:text-base">
-                    Talk to Our Experts Today!
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[600px]">
-                  <ContactForm />
-                </DialogContent>
-              </Dialog>
+              <Button 
+                className="mt-4 w-full bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-[0_0_15px_rgba(126,105,171,0.5)] text-sm md:text-base"
+                onClick={scrollToContact}
+              >
+                Talk to Our Experts Today!
+              </Button>
             </div>
           ))}
         </div>
