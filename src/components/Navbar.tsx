@@ -20,7 +20,7 @@ export const Navbar = () => {
           <span className="font-montserrat font-bold text-xl bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent">
             Orchida
           </span>
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('hero')} 
               className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
@@ -42,6 +42,27 @@ export const Navbar = () => {
             <button 
               onClick={() => scrollToSection('contact')} 
               className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            >
+              Contact
+            </button>
+          </div>
+          {/* Mobile Menu */}
+          <div className="flex md:hidden space-x-4">
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent text-sm hover:opacity-80 transition-opacity"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')} 
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent text-sm hover:opacity-80 transition-opacity"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="bg-gradient-to-r from-orchid-400 via-orchid-500 to-orchid-400 bg-clip-text text-transparent text-sm hover:opacity-80 transition-opacity"
             >
               Contact
             </button>

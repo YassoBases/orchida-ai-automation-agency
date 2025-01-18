@@ -1,7 +1,5 @@
 import { Bot, Headphones, MessageSquare } from "lucide-react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ContactForm } from "@/components/ContactForm";
 
 const services = [
   {
@@ -22,6 +20,20 @@ const services = [
 ];
 
 export const ServicesSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const navbarHeight = 64;
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <section id="services" className="py-12 md:py-20 px-4 bg-background">
       <div className="container mx-auto">
@@ -39,16 +51,12 @@ export const ServicesSection = () => {
                 {service.title}
               </h3>
               <p className="text-sm md:text-base text-orchid-100/80 mb-6">{service.description}</p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button className="w-full bg-orchid-500 hover:bg-orchid-600 text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(217,70,239,0.5)]">
-                    Discover Our Solutions
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[600px] bg-background border border-orchid-400/20">
-                  <ContactForm />
-                </DialogContent>
-              </Dialog>
+              <Button 
+                className="w-full bg-orchid-500 hover:bg-orchid-600 text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(217,70,239,0.5)]"
+                onClick={scrollToContact}
+              >
+                Discover Our Solutions
+              </Button>
             </div>
           ))}
         </div>
