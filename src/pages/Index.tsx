@@ -15,14 +15,17 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <HeroSection onGetStarted={scrollToContact} />
-      <ServicesSection />
-      <ProblemsSection />
-      <AboutSection />
-      <ContactSection contactRef={contactRef} />
-      <Footer />
+    <div className="min-h-screen relative">
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-[2px]" />
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection onGetStarted={scrollToContact} />
+        <ServicesSection />
+        <ProblemsSection />
+        <AboutSection />
+        <ContactSection contactRef={contactRef} />
+        <Footer />
+      </div>
     </div>
   );
 };
