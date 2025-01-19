@@ -17,10 +17,19 @@ const Index = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="stars" />
+      <div className="glow-effect" />
       <div className="orb" style={{ 
         left: "50%", 
         top: "30%",
         transform: "translate(-50%, -50%)",
+      }} />
+      <div className="small-orb" style={{ 
+        left: "20%", 
+        top: "60%",
+      }} />
+      <div className="small-orb" style={{ 
+        right: "15%", 
+        top: "40%",
       }} />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/95 to-background/90 backdrop-blur-[1px]" />
       <div className="relative z-10">

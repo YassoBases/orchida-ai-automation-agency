@@ -66,15 +66,42 @@
     }
   }
 
+  @keyframes floating-orbs {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+
   @keyframes stars {
     0% {
       opacity: 0.3;
+      transform: scale(1);
     }
     50% {
       opacity: 0.8;
+      transform: scale(1.1);
     }
     100% {
       opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 40px rgba(155, 135, 245, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 60px rgba(217, 70, 239, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 40px rgba(155, 135, 245, 0.3);
     }
   }
 
@@ -110,6 +137,21 @@
   animation: orb-animation 8s ease-in-out infinite;
 }
 
+.small-orb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(217, 70, 239, 0.3) 0%,
+    rgba(155, 135, 245, 0.3) 50%,
+    transparent 80%
+  );
+  filter: blur(40px);
+  animation: floating-orbs 12s ease-in-out infinite;
+}
+
 .stars {
   position: fixed;
   width: 2px;
@@ -135,4 +177,12 @@
     1500px 200px 1px white;
   animation: stars 3s ease-in-out infinite;
   opacity: 0.3;
+}
+
+.glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: glow 6s ease-in-out infinite;
+  pointer-events: none;
 }
