@@ -51,63 +51,30 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  @keyframes orb-animation {
+  @keyframes gradient-animation {
     0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.6;
+      background-position: 0% 50%;
     }
     50% {
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0.8;
+      background-position: 100% 50%;
     }
     100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.6;
-    }
-  }
-
-  @keyframes floating-orbs {
-    0% {
-      transform: translateY(0px) translateX(0px);
-    }
-    50% {
-      transform: translateY(-20px) translateX(10px);
-    }
-    100% {
-      transform: translateY(0px) translateX(0px);
-    }
-  }
-
-  @keyframes stars {
-    0% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.6;
-      transform: scale(1.1);
-    }
-    100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes glow {
-    0% {
-      box-shadow: 0 0 100px rgba(155, 135, 245, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 120px rgba(217, 70, 239, 0.5);
-    }
-    100% {
-      box-shadow: 0 0 100px rgba(155, 135, 245, 0.4);
+      background-position: 0% 50%;
     }
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
-    background: #1A1F2C;
+    @apply bg-background text-foreground;
+    background: linear-gradient(
+      -45deg,
+      rgba(26, 31, 44, 1) 0%,
+      rgba(26, 31, 44, 0.95) 25%,
+      rgba(155, 135, 245, 0.1) 50%,
+      rgba(217, 70, 239, 0.05) 75%,
+      rgba(26, 31, 44, 1) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
   }
 }
 
@@ -115,74 +82,12 @@
   * {
     @apply border-border;
   }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 .form-message {
   @apply text-[#8B0000] text-sm mt-1;
-}
-
-.orb {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(217, 70, 239, 0.5) 0%,
-    rgba(155, 135, 245, 0.5) 25%,
-    rgba(155, 135, 245, 0.2) 50%,
-    transparent 70%
-  );
-  filter: blur(60px);
-  animation: orb-animation 8s ease-in-out infinite;
-}
-
-.small-orb {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(217, 70, 239, 0.4) 0%,
-    rgba(155, 135, 245, 0.4) 50%,
-    transparent 80%
-  );
-  filter: blur(40px);
-  animation: floating-orbs 12s ease-in-out infinite;
-}
-
-.stars {
-  position: fixed;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 
-    0 0 60px white,
-    100px 100px 1px white,
-    200px 50px 1px white,
-    300px 200px 1px white,
-    400px 150px 1px white,
-    500px 300px 1px white,
-    600px 100px 1px white,
-    700px 200px 1px white,
-    800px 150px 1px white,
-    900px 300px 1px white,
-    1000px 100px 1px white,
-    1100px 200px 1px white,
-    1200px 150px 1px white,
-    1300px 300px 1px white,
-    1400px 100px 1px white,
-    1500px 200px 1px white;
-  animation: stars 3s ease-in-out infinite;
-  opacity: 0.3;
-}
-
-.glow-effect {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  animation: glow 6s ease-in-out infinite;
-  pointer-events: none;
 }
